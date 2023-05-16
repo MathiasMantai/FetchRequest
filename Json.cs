@@ -2,11 +2,16 @@
 
 namespace HttpFetch
 {
-    class Json
+    public class Json
     {
         public static T Deserialize<T>(string obj) 
         {
-            return JsonConvert.DeserializeObject<T>(obj);
+            return JsonConvert.DeserializeObject<T>(obj)!;
+        }
+
+        public static string Serialize(object obj)
+        {
+            return JsonConvert.SerializeObject(obj)!;   
         }
     }
 }
