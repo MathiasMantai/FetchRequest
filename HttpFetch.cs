@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-
-
-namespace HttpFetch
+﻿namespace HttpFetch
 {
     public class FetchRequest
     {
