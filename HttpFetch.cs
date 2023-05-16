@@ -1,4 +1,7 @@
-﻿namespace HttpFetch
+﻿using Newtonsoft.Json;
+
+
+namespace HttpFetch
 {
     public class FetchRequest
     {
@@ -17,6 +20,12 @@
         {
             var content = this.Content!.Content.ReadAsStringAsync().Result;
             return content;
+        }
+
+        public T ReadJson<T>()
+        {
+            var res = this.Content!.Content.ReadAsStringAsync().Result;
+            return Json.Deserialize<T>(res);
         }
     }
 }
